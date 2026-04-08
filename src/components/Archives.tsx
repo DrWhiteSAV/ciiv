@@ -281,7 +281,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
                 <div className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-3xl">
                   <div className="flex items-center justify-between mb-6 md:mb-8">
                     <h3 className="text-[8px] md:text-xs font-mono uppercase tracking-[0.3em] text-gold">Наследие эпохи: {selectedEraName}</h3>
-                    <span className="text-gold font-mono text-lg md:text-xl">{Math.round(victoryProgress)}%</span>
+                    <span className="text-gold font-mono text-lg md:text-xl">{Math.round(victoryProgress ?? 0)}%</span>
                   </div>
                   <div className="w-full h-1.5 md:h-2 bg-white/5 rounded-full overflow-hidden mb-4 md:mb-6">
                     <motion.div 
