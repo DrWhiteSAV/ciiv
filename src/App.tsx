@@ -563,7 +563,7 @@ const AppContent: React.FC = () => {
         setFateLoadingCountdown(10); // Wait 10 seconds for retry
       } else {
         // Use fallback immediately for other errors
-        const fallbackResult = generateFallbackFateOutcome(gameState, selectedChoiceIndex, years, preCalculatedData);
+        const fallbackResult = generateFallbackFateOutcome(gameState, selectedChoiceIndex ?? 0, years, preCalculatedData);
         // Ensure fallback also respects pre-calculated data if possible, 
         // but fallback usually generates its own. 
         // For now, let's just use the fallback as is, or update it too.
