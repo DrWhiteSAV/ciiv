@@ -5,6 +5,41 @@
   --color-deep-black: #050505;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-background: var(--deep-black);
+  --color-foreground: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #D4AF37;
+  --color-primary: #D4AF37;
+  --color-primary-foreground: #000000;
+  --color-secondary: rgba(255, 255, 255, 0.05);
+  --color-secondary-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.05);
+  --color-muted-foreground: rgba(255, 255, 255, 0.5);
+  --color-accent: rgba(255, 255, 255, 0.05);
+  --color-accent-foreground: #ffffff;
+  --color-popover: #0a0a0a;
+  --color-popover-foreground: #ffffff;
+  --color-card: #0a0a0a;
+  --color-card-foreground: #ffffff;
+
+  --radius: 0.75rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
 
 @layer base {
@@ -12,7 +47,6 @@
     @apply bg-deep-black text-white font-sans;
   }
 
-  /* Custom scrollbar for some elements if needed */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -68,14 +102,9 @@
   to { transform: rotate(360deg); }
 }
 
-/* SVG Energy Flow Animation */
 @keyframes energyFlow {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
 }
 
 .energy-line {
