@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-deep-black: #050505;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-deep-black text-white font-sans;
+  }
+
+  /* Custom scrollbar for some elements if needed */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold/50 rounded-full;
+  }
+}
+
+@layer utilities {
+  .glow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  .glow-gold-lg {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.7), 0 0 30px rgba(212, 175, 55, 0.5);
+  }
+  .border-glow-gold {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3), inset 0 0 5px rgba(212, 175, 55, 0.2);
+  }
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+  }
+  .border-light-animation {
+    position: relative;
+    z-index: 1;
+  }
+  .border-light-animation::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, transparent 0%, transparent 40%, rgba(212, 175, 55, 0.8) 50%, transparent 60%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateLight 4s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+@keyframes rotateLight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* SVG Energy Flow Animation */
+@keyframes energyFlow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.energy-line {
+  stroke-dasharray: 10, 5;
+  animation: energyFlow 2s linear infinite;
+}
