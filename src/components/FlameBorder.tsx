@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-export const FlameBorder: React.FC<{ children: React.ReactNode; className?: string; style?: React.CSSProperties }> = ({ children, className = "", style }) => {
+export const FlameBorder: React.FC<{ children: React.ReactNode; className?: string; style?: React.CSSProperties; id?: string }> = ({ children, className = "", style, id }) => {
   return (
-    <div className={`relative rounded-2xl ${className}`} style={style}>
+    <div id={id} className={`relative rounded-2xl ${className}`} style={style}>
       {/* Flame Animation Layers */}
       <div className="absolute inset-0 rounded-2xl border border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]" />
       

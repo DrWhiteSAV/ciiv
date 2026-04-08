@@ -235,7 +235,7 @@ const AppContent: React.FC = () => {
           setIsGenerationInProgress(true);
           try {
             const years = pendingFateData!.years;
-            const currentIsObserver = pendingFateData!.isObserverMode;
+            const currentIsObserver = pendingFateData!.isObserver;
             const selectedChoiceIndex = pendingFateData!.choiceIndex;
             
             const preCalculatedData = calculatePreCalculatedData(
@@ -252,7 +252,7 @@ const AppContent: React.FC = () => {
             }
 
             setGameState(prev => ({ ...prev, pendingResult: result }));
-            if (result.accelerationBonus && !pendingFateData!.isObserverMode) {
+            if (result.accelerationBonus && !pendingFateData!.isObserver) {
               setShowBonusChoiceModal(true);
             }
             setIsGenerating(false);
@@ -262,7 +262,7 @@ const AppContent: React.FC = () => {
             // If retry fails, use fallback regardless of error type
             const preCalculatedData = calculatePreCalculatedData(
               pendingFateData!.years, 
-              pendingFateData!.isObserverMode, 
+              pendingFateData!.isObserver, 
               gameState.isBonusActive || gameState.isBonusEarned,
               pendingFateData!.choiceIndex
             );
@@ -563,7 +563,7 @@ const AppContent: React.FC = () => {
         setFateLoadingCountdown(10); // Wait 10 seconds for retry
       } else {
         // Use fallback immediately for other errors
-        const fallbackResult = generateFallbackFateOutcome(gameState, selectedChoiceIndex, years, preCalculatedData);
+        const fallbackResult = generateFallbackFateOutcome(gameState, selectedChoiceIndex ?? 0, years, preCalculatedData);
         // Ensure fallback also respects pre-calculated data if possible, 
         // but fallback usually generates its own. 
         // For now, let's just use the fallback as is, or update it too.
