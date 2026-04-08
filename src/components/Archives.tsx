@@ -79,7 +79,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
             onClick={onClose}
             className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/60 hover:text-white"
           >
-            <X size={20} md:size={24} />
+            <X size={20} />
           </button>
         </div>
 
@@ -185,7 +185,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
                     <div key={hero.id} className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-gold/30 transition-all group">
                       <div className="flex items-start justify-between mb-3 md:mb-4">
                         <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold border border-gold/20 group-hover:scale-110 transition-transform">
-                          <Shield size={20} md:size={24} />
+                          <Shield size={20} />
                         </div>
                         <div className="text-right">
                           <div className="text-[8px] md:text-[10px] font-mono uppercase tracking-widest text-white/30">{hero.era}</div>
@@ -218,7 +218,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
                   filteredRelics.map((relic) => (
                     <div key={relic.id} className="p-4 md:p-5 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col items-center text-center hover:bg-white/[0.07] transition-all">
                       <div className={`w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-3 md:mb-4 border ${relic.type === 'relic' ? 'bg-purple-500/10 border-purple-500/20 text-purple-400' : 'bg-blue-500/10 border-blue-500/20 text-blue-400'}`}>
-                        {relic.type === 'relic' ? <Sparkles size={20} md:size={24} /> : <Compass size={20} md:size={24} />}
+                        {relic.type === 'relic' ? <Sparkles size={20} /> : <Compass size={20} />}
                       </div>
                       <div className="text-[8px] md:text-[10px] font-mono uppercase tracking-widest text-white/30 mb-1">Год {relic.yearFound}</div>
                       <h3 className="text-xs md:text-white font-medium mb-1 md:mb-2">{relic.name}</h3>
@@ -239,7 +239,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
               >
                 <div className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-3xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-4 md:p-8 opacity-5">
-                    <Globe size={80} md:size={120} />
+                    <Globe size={80} />
                   </div>
                   <h3 className="text-[8px] md:text-xs font-mono uppercase tracking-[0.3em] text-gold mb-4 md:mb-6">Идеология эпохи</h3>
                   <div className="text-2xl md:text-4xl font-light text-white mb-3 md:mb-4 uppercase tracking-widest">{ideology}</div>
@@ -259,7 +259,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
                       externalContacts.map((contact, i) => (
                         <div key={i} className="p-3 md:p-4 bg-white/[0.02] border border-white/10 rounded-xl flex items-center gap-3 md:gap-4">
                           <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40">
-                            <Globe size={16} md:size={20} />
+                            <Globe size={16} />
                           </div>
                           <span className="text-white/80 font-mono text-xs md:text-sm">{contact}</span>
                         </div>
@@ -299,7 +299,7 @@ export const Archives: React.FC<ArchivesProps> = ({ gameState, onClose }) => {
 
                 <div className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-3xl flex items-start gap-4 md:gap-6">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gold/10 flex items-center justify-center text-gold border border-gold/20 shrink-0">
-                    <Music size={24} md:size={32} />
+                    <Music size={24} />
                   </div>
                   <div>
                     <h3 className="text-[8px] md:text-xs font-mono uppercase tracking-[0.3em] text-white/40 mb-1 md:mb-2">Звуковой Ландшафт</h3>

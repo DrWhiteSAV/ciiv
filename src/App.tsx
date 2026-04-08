@@ -235,7 +235,7 @@ const AppContent: React.FC = () => {
           setIsGenerationInProgress(true);
           try {
             const years = pendingFateData!.years;
-            const currentIsObserver = pendingFateData!.isObserverMode;
+            const currentIsObserver = pendingFateData!.isObserver;
             const selectedChoiceIndex = pendingFateData!.choiceIndex;
             
             const preCalculatedData = calculatePreCalculatedData(
@@ -252,7 +252,7 @@ const AppContent: React.FC = () => {
             }
 
             setGameState(prev => ({ ...prev, pendingResult: result }));
-            if (result.accelerationBonus && !pendingFateData!.isObserverMode) {
+            if (result.accelerationBonus && !pendingFateData!.isObserver) {
               setShowBonusChoiceModal(true);
             }
             setIsGenerating(false);
@@ -262,7 +262,7 @@ const AppContent: React.FC = () => {
             // If retry fails, use fallback regardless of error type
             const preCalculatedData = calculatePreCalculatedData(
               pendingFateData!.years, 
-              pendingFateData!.isObserverMode, 
+              pendingFateData!.isObserver, 
               gameState.isBonusActive || gameState.isBonusEarned,
               pendingFateData!.choiceIndex
             );
